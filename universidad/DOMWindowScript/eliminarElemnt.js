@@ -1,7 +1,7 @@
 /************************************************************************************************
 *****************************             ELIMINAR ELEMENTOS   ******************
 *************************************************************************************************/
-/*
+
 const enlaces = document.querySelector('.enlace');
 const navegacion = document.querySelector('#principal');
 
@@ -10,7 +10,7 @@ navegacion.removeChild(enlaces[0]);
 //enlaces[0].remove();
 
 console.log(navegacion);
-*/
+
 //leer un atributo
 const primerLi = document.querySelector('.enlace');
 
@@ -25,4 +25,4 @@ primerLi.removeAttribute('data-id');
 elemento = primerLi();
 
 
-console.log(elemento);
+console.log(elemento) ;
