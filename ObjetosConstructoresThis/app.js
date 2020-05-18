@@ -81,24 +81,48 @@ const boolean2 = new Boolean(true);
 
 //
 
-function Cliente(nombre, saldo){
+function Cliente(nombre, saldo) {
     this.nombre = nombre;
     this.saldo = saldo;
-    this.tipoCliente = function(){
-        let tipo;
-        if(this.saldo > 1000){
-            tipo = 'Gold';
-        }else if(this.saldo > 500){
-            tipo = 'Platinium';
-        }else {
-            tipo = 'normal';
-        }
-        return tipo;
-    }
 
 }
 
+//Crear un prototype
+Cliente.prototype.tipoCliente = function () {
+    let tipo;
+    if (this.saldo > 1000) {
+        tipo = 'Gold';
+    } else if (this.saldo > 500) {
+        tipo = 'Platinium';
+    } else {
+        tipo = 'normal';
+    }
+    return tipo;
+}
 
-const cliente2 = new Cliente('Homer', 100);
+//Prototipo que imprime saldo y nombre
+Cliente.prototype.nombreClienteSaldo = function () {
+    return `Nombre: ${this.nombre}, tu saldo es de ${this.saldo},
+    Tipo de Cliente ${this.tipoCliente()} `;
+}
 
-console.log(cliente2);
+
+//Prototype retirar saldo
+Cliente.prototype.retiroSaldo = function(retiro) {
+    return this.saldo -= retiro;
+}
+
+
+
+const cliente1 = new Cliente('Homer', 100);
+const cliente2 = new Cliente('Juan', 600);
+const cliente3 = new Cliente('Maria', 1200);
+
+cliente2.retiroSaldo(300);
+
+
+
+console.log(cliente1.nombreClienteSaldo());
+console.log(cliente2.nombreClienteSaldo());
+console.log(cliente3.nombreClienteSaldo());
+
