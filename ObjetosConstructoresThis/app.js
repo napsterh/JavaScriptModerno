@@ -130,8 +130,8 @@ console.log(cliente3.nombreClienteSaldo());
 */
 
 
-/***************************  HERENDANDO PROTOTYPES *********************************************/
-
+/***************************  HEREDANDO PROTOTYPES *********************************************/
+/*
 
 function Cliente(nombre, saldo) {
     this.nombre = nombre;
@@ -160,3 +160,25 @@ const empresa = new Empresa('Udemy', 10000000, 1234678, 'educacion');
 
 
 console.log(empresa.nombreClienteSaldo());
+
+*/
+
+/***************************  OBJECT CREATE *********************************************/
+
+const Cliente = {
+    imprimirSaldo: function () {
+        return `Hola ${this.nombre} tu saldo es ${this.saldo}`;
+    },
+    retirosaldo: function (retiro) {
+        return this.saldo -= retiro;
+    }
+}
+
+// Crear objeto
+const mary = Object.create(Cliente);
+mary.nombre = 'Mary';
+mary.saldo = 1000;
+
+mary.retirosaldo(300);
+
+console.log(mary.imprimirSaldo());
