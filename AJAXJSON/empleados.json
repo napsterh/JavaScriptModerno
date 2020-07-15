@@ -2,19 +2,19 @@
      {
           "id" : 1,
           "nombre" : "Homer",
-          "empresa" : "EasyWebDev",
+          "empresa" : "Henri Barrett",
           "trabajo" : "Desarrollador Web"
      },
      {
           "id" : 2,
           "nombre" : "Alejandra",
-          "empresa" : "EasyWebDev",
+          "empresa" : "Henri Barrett",
           "trabajo" : "Diseñadora"
      },
      {
           "id" : 3,
           "nombre" : "Pedro",
-          "empresa" : "EasyWebDev",
+          "empresa" : "Henri Barrett",
           "trabajo" : "Aplicaciones Móviles"
      }
 ]
