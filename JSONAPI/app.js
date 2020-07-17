@@ -1,6 +1,5 @@
 const cargarposts = document.querySelector('#cargar').addEventListener('click', cargarAPI);
 
-
 function cargarAPI() {
     //crear el objeto
     const xhr = new XMLHttpRequest();
