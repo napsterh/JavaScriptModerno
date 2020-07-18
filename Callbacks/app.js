@@ -1,4 +1,3 @@
-/*
 
 //Callback de Foreach
 
@@ -9,7 +8,7 @@ ciudades.forEach(function(ciudad) {
     console.log(ciudad);
 })
 
-*/
+
 
 //Listado de paises
 const paises = ['Perú', 'Colombia', 'Venezuela', 'Chile', 'Argentina', 'Colombia'];
