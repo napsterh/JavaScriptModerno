@@ -15,9 +15,10 @@ ciudades.forEach(function(ciudad) {
 const paises = ['Perú', 'Colombia', 'Venezuela', 'Chile', 'Argentina', 'Colombia'];
 
 //Nuevo pais
-function nuevoPais(pais){
+function nuevoPais(pais, callback){
     setTimeout(function() {
         paises.push(pais);
+        callback();
     }, 2000);
 }
 
@@ -32,8 +33,9 @@ function mostrarPaises() {
     },1000);
 }
 
+//Agregar un nuevo pais
+nuevoPais('Rusia', mostrarPaises);
+
+
 // Mostrar los paises
 mostrarPaises();
-
-//Agregar un nuevo pais
-nuevoPais('Rusia');
