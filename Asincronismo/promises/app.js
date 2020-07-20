@@ -13,16 +13,18 @@ waiting.then(function(mensaje){
 */
 
 const aplicarDescuento = new Promise(function(resolve, reject) {
-    const descuento = false;
-    if(descuento){
-        resolve('descuento aplicado');
-    }else {
-        reject('No se puede aplicar el descuento')
-    }
+    setTimeout(function(){
+        const descuento = true;
+        if(descuento){
+            resolve('descuento aplicado');
+        }else {
+            reject('No se puede aplicar el descuento')
+        }
+    }, 2000)
 });
 
 aplicarDescuento.then(function(resultado) {
-    console.log(resultado);
+    console.log('resolve:',resultado);
 }).catch(function(error){
-    console.log('No se puede aplicar el descuento');
+    console.log('reject:',error);
 });
