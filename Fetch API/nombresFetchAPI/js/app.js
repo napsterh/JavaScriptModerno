@@ -19,18 +19,36 @@ function cargarNombres(e) {
 
      let url = '';
      url += 'http://uinames.com/api/?';
-     // Si hay origen agregarlo a la URL
-     if(origenSeleccionado !== '') {
-          url += `region=${origenSeleccionado}&`;
-     }
-     // Si hay un genero agregarlo a la URL
-     if(generoSeleccionado !== '') {
-          url += `gender=${generoSeleccionado}&`;
-     }
-     // Si hay una cantidad agregarlo a la URL
-     if(cantidad !== '') {
-          url += `amount=${cantidad}&`;
-     }
+          // Si hay origen agregarlo a la URL
+          if(origenSeleccionado !== '') {
+               url += `region=${origenSeleccionado}&`;
+          }
+          // Si hay un genero agregarlo a la URL
+          if(generoSeleccionado !== '') {
+               url += `gender=${generoSeleccionado}&`;
+          }
+          // Si hay una cantidad agregarlo a la URL
+          if(cantidad !== '') {
+               url += `amount=${cantidad}&`;
+          }
 
      // Código de FETCH API AQUI
+
+     fetch(url)
+          .then(function(res){
+               return res.json();
+          })
+          .then(function(data){
+               let html = `<h2>Nombres generados</h2>`;
+               html += `<ul class="lista">`;
+               data.forEach(function(nombre){
+                    html += `
+                         <li>${nombre.name}</li>
+                    `;
+               })
+               html += `</ul>`;
+               document.getElementById('#resultado').innerHTML = html;
+          }).catch(function(error){
+               console.log(error);
+          })
 }
