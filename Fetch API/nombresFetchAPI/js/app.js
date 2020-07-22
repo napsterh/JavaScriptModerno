@@ -39,7 +39,7 @@ function cargarNombres(e) {
                return res.json();
           })
           .then(function(data){
-               let html = `<h2>Nombres generados</h2>`;
+               let html = `<h2>Nombres Generados</h2>`;
                html += `<ul class="lista">`;
                data.forEach(function(nombre){
                     html += `
