@@ -40,4 +40,3 @@ productos.forEach(producto =>  {
 })
 */
 productos.forEach(producto =>  console.log(producto));
-    
